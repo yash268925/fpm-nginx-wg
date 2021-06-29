@@ -1,3 +1,3 @@
 *
 !nginx.conf
-!docker-nginx/mainline/alpine/*.sh
+!docker-entrypoint.sh

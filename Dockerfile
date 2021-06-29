@@ -9,10 +9,7 @@ RUN apk update \
  && mkdir /docker-entrypoint.d
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY docker-nginx/mainline/alpine/docker-entrypoint.sh /
-COPY docker-nginx/mainline/alpine/10-listen-on-ipv6-by-default.sh /docker-entrypoint.d
-COPY docker-nginx/mainline/alpine/20-envsubst-on-templates.sh /docker-entrypoint.d
-COPY docker-nginx/mainline/alpine/30-tune-worker-processes.sh /docker-entrypoint.d
+COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 EXPOSE 80
