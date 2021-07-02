@@ -1,5 +1,5 @@
 LANG  := C
-IMAGE := yash268925/fpm-nginx
+IMAGE := yash268925/fpm-nginx-wg
 TAG   := latest
 
 # http://postd.cc/auto-documented-makefile/
