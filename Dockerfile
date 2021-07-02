@@ -1,5 +1,7 @@
 FROM php:fpm-alpine
 
+WORKDIR /var/www
+
 RUN apk update \
  && apk add nginx imagemagick ffmpeg \
  && pear install Mail \
@@ -8,8 +10,9 @@ RUN apk update \
  && ln -sf /dev/stderr /var/log/nginx/error.log \
 # create a docker-entrypoint.d directory
  && mkdir /docker-entrypoint.d \
-# change docroot directory name
- && mv /var/www/html /var/www/pub
+# change docroot directory name and clean
+ && mv /var/www/html /var/www/pub \
+ && rm -rf /var/www/localhost
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY docker-entrypoint.sh /
