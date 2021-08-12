@@ -1,3 +1,4 @@
 *
 !nginx.conf
+!default_server.conf
 !docker-entrypoint.sh
